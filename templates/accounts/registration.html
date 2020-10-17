@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+<!-- basic -->
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<!-- mobile metas -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+<!-- site metas -->
+<title>loan</title>
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+<meta name="keywords" content="">
+<meta name="description" content="">
+<meta name="author" content="">
+<!-- site icons -->
+<link rel="icon" href="{% static 'images/fevicon/fevicon.png' %}" type="image/gif" />
+<!-- bootstrap css -->
+<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+<!-- Site css -->
+<link rel="stylesheet" href="{% static 'css/style.css' %}" />
+<!-- responsive css -->
+<link rel="stylesheet" href="{% static 'css/responsive.css' %}" />
+<!-- colors css -->
+<link rel="stylesheet" href="{% static 'css/colors1.css' %}" />
+<!-- custom css -->
+<link rel="stylesheet" href="{% static 'css/custom.css' %}" />
+<!-- wow Animation css -->
+<link rel="stylesheet" href="{% static 'css/animate.css' %}" />
+<!-- zoom effect -->
+<link rel='stylesheet' href="{% static 'css/hizoom.css' %}">
+<!-- end zoom effect -->
+<!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+      <![endif]-->
+</head>
+<body id="default_theme" class="make_appointment">
+<!-- loader -->
+<div class="bg_load"> <img class="loader_animation" src="{% static 'images/loaders/loader_1.png' %}" alt="#" /> </div>
+<!-- end loader -->
+<!-- header -->
+<header id="default_header" class="header_style_1">
+  <!-- header top -->
+  <div class="header_top">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="full">
+            <div class="topbar-left">
+              <ul class="list-inline">
+                <li> <span class="topbar-label"><i class="fa  fa-home"></i></span> <span class="topbar-hightlight">#63,Anjaneya colony,Bhagyanagar</span> </li>
+                <li> <span class="topbar-label"><i class="fa fa-envelope-o"></i></span> <span class="topbar-hightlight"><a href="kmpujar2014@gmail.com">kmpujar2014@gmail.com</a></span> </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 right_section_header_top">
+          <div class="float-left">
+            <div class="social_icon">
+              <ul class="list-inline">
+                <li><a class="fa fa-facebook" href="https://www.facebook.com/" title="Facebook" target="_blank"></a></li>
+                <li><a class="fa fa-google-plus" href="https://plus.google.com/" title="Google+" target="_blank"></a></li>
+                <li><a class="fa fa-twitter" href="https://twitter.com" title="Twitter" target="_blank"></a></li>
+                <li><a class="fa fa-linkedin" href="https://www.linkedin.com" title="LinkedIn" target="_blank"></a></li>
+                <li><a class="fa fa-instagram" href="https://www.instagram.com" title="Instagram" target="_blank"></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="float-right">
+            <div class="make_appo"> <a class="btn white_btn" href="{% url 'accounts:register'%}">Register</a> </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- end header top -->
+  <!-- header bottom -->
+  <div class="header_bottom">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-3 col-md-12 col-sm-12 col-xs-12">
+          <!-- logo start -->
+          <div class="logo"> <a href="{% url 'index' %}"><img src="{% static 'images/logos/it_logo.png' %}" alt="logo" /></a> </div>
+          <!-- logo end -->
+        </div>
+        <div class="col-lg-9 col-md-12 col-sm-12 col-xs-12">
+          <!-- menu start -->
+          <div class="menu_side">
+            <div id="navbar_menu">
+              <ul class="first-ul">
+                <li> <a href="{% url 'index' %}">Home</a>
+
+                </li>
+                <li><a href="it_about.html">About Us</a></li>
+                <li> <a href="it_service.html">Service</a>
+                  <ul>
+                    <li><a href="it_service_list.html">Services list</a></li>
+                    <li><a href="it_service_detail.html">Services Detail</a></li>
+                  </ul>
+                </li>
+                <li> <a href="it_blog.html">Blog</a>
+                  <ul>
+                    <li><a href="it_blog.html">Blog List</a></li>
+                    <li><a href="it_blog_grid.html">Blog Grid</a></li>
+                    <li><a href="it_blog_detail.html">Blog Detail</a></li>
+                  </ul>
+                </li>
+
+                {% if user.is_authenticated %}
+
+                <li> <a href="{% url 'accounts:logout' %}">Logout</a></li>
+
+                {% else %}
+
+                <li> <a href="{% url 'accounts:user_login' %}">Login</a></li>
+
+                {% endif %}
+
+                <li> <a class="active" href="it_contact.html">Contact</a>
+                  <ul>
+                    <li><a href="it_contact.html">Contact Page 1</a></li>
+                    <li><a href="it_contact_2.html">Contact Page 2</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+            <div class="search_icon">
+              <ul>
+                <li><a href="#" data-toggle="modal" data-target="#search_bar"><i class="fa fa-search" aria-hidden="true"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <!-- menu end -->
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- header bottom end -->
+</header>
+<!-- end header -->
+<!-- inner page banner -->
+<div id="inner_banner" class="section inner_banner_section">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="full">
+          <div class="title-holder">
+            <div class="title-holder-cell text-left">
+              <h1 class="page-title">Register</h1>
+              <ol class="breadcrumb">
+                <li><a href="{% url 'index' %}">Home</a></li>
+                <li class="active">Register</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- end inner page banner -->
+<br>
+<br>
+<div class="container">
+  <div class="jumbotron">
+     {% if registered %}
+         <h2>Thank you For Registering</h2>
+     {% else %}
+         <h2>fill out the Form!</h2>
+             <form enctype="multipart/form-data" method="post">
+                 {% csrf_token %}
+                 {{ user_form.as_p }}
+                 {{ profile_form.as_p }}
+
+                 <div class="center">
+                   <input type="submit" class="btn main_bt" value="SUBMIT NOW">
+                 </div>
+              </form>
+      {% endif %}
+
+
+
+
+
+
+
+
+   </div>
+ </div>
+
+
+
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!-- menu js -->
+<script src="{% static 'js/menumaker.js' %}"></script>
+<!-- wow animation -->
+<script src="{% static 'js/wow.js' %}"></script>
+<!-- custom js -->
+<script src="{% static 'js/custom.js' %}"></script>
